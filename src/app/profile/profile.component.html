@@ -1,3 +1,17 @@
-<p>
-  profile works!
-</p>
+<mat-card class="profile-card">
+  <mat-card-title>Profile</mat-card-title>
+  <mat-card-content>
+    <div class="profile-img">
+      <img [src]="userInfo?.picture.large"  [alt]="userInfo?.name.first">
+    </div>
+    <h1>
+        {{ userInfo?.name.title+" "+userInfo?.name.first+" "+userInfo?.name.last }}
+    </h1>
+    <h2>{{ userInfo?.gender | uppercase }} / {{ userInfo?.dob.age }} yrs</h2>
+    <h2>{{ userInfo?.email+" / "+userInfo?.phone }}</h2>
+    <p>
+        {{ userInfo?.location.street.name+", "+userInfo?.location.postcode+", "+userInfo?.location.city+", "+userInfo?.location.state+", "+userInfo?.location.country }}
+        
+    </p>
+  </mat-card-content>
+</mat-card>

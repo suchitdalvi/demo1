@@ -8,4 +8,8 @@ export class HeaderPage {
   getHeaderinfo() {
     return element(by.css('.headerinfo'));
   }
+
+  logOut() {
+    return element(by.css('button')).click();
+  }
 }

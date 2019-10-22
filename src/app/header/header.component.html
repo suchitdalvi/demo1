@@ -3,7 +3,7 @@
     <span class="spacer"></span>
     <div class="headerinfo">
       <span>Welcome {{ !userService.authenticated ? loginUserName : userService.userObject['name']['first']  }} </span>
-      <a mat-button (click)="logout()" *ngIf="userService.authenticated">Logout</a>
+      <button mat-button (click)="logout()" *ngIf="userService.authenticated">Logout</button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
