@@ -2,7 +2,8 @@
   <mat-toolbar-row>
     <span class="spacer"></span>
     <div class="headerinfo">
-      <span>Welcome {{ loginUserName }} </span>
+      <span>Welcome {{ !userService.authenticated ? loginUserName : userService.userObject['name']['first']  }} </span>
+      <a mat-button (click)="logout()" *ngIf="userService.authenticated">Logout</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

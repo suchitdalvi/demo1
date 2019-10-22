@@ -1,3 +1,32 @@
-<p>
-  signin works!
-</p>
+<mat-card class="login-card">
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()" id="loginForm">
+      <div id="username-container">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username" name="username" formControlName="username">
+        </mat-form-field>
+        <div id="username-error-msg" *ngIf="submitted && !loginForm.get('username').valid" style="color:red">
+            Please enter username
+        </div>
+      </div>
+      
+      <div id="password-container">
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" name="password" formControlName="password">
+        </mat-form-field>
+        <div id="password-error-msg" *ngIf="submitted && !loginForm.get('password').valid" style="color:red">
+            Please enter password
+        </div>
+      </div>
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <div class="button" id="login-btn-container">
+        <button type="submit" mat-raised-button color="primary" id="btnSubmit" >Login</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
